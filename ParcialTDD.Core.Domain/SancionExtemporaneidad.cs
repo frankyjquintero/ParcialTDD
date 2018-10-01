@@ -9,7 +9,7 @@ namespace ParcialTDD.Core.Domain
     public class SancionExtemporaneidad : ISanciones
     {
         private readonly decimal SMLDV ;
-        private DateTime FechaOficialDeclaracion;
+        private readonly DateTime FechaOficialDeclaracion;
         public SancionExtemporaneidad(decimal sMLDV, DateTime fechaOficialDeclaracion)
         {
             FechaOficialDeclaracion = fechaOficialDeclaracion;
@@ -21,41 +21,20 @@ namespace ParcialTDD.Core.Domain
             var diasExtermporneos = CalcularDiasExtemporaneos(fechaDeclaracion);
             if (ValorDeclarar > 0)
             {
-                if (emplazamiento)
-                {
-                    return ValorDeclarar * diasExtermporneos * 0.10m;
-                }
-                else
-                {
-                    return ValorDeclarar * diasExtermporneos * 0.05m;
-                }
+                var liquidacionParcial = ValorDeclarar * diasExtermporneos;
+                return emplazamiento ? (liquidacionParcial * 0.10m) : (liquidacionParcial * 0.05m);
             }
             else
             {
-                if (emplazamiento)
-                {
-                    return diasExtermporneos * SMLDV * 2m;
-                }
-                else
-                {
-                    return diasExtermporneos * SMLDV;
-                }
+                var liquidacionParcialCero = diasExtermporneos * SMLDV;
+                return emplazamiento ? (liquidacionParcialCero * 2) : liquidacionParcialCero;
             }
-            throw new NotImplementedException();
         }
         private int CalcularDiasExtemporaneos(DateTime fechaDeclaracion)
         {
-
             TimeSpan dias = fechaDeclaracion - FechaOficialDeclaracion;
             var ndias = dias.Days;
-            if (ndias <= 0)
-            {
-                return 0;
-            }
-            else
-            {
-                return ndias;
-            }
+            return (ndias >= 0) ? ndias : 0;
         }
     }
 }
