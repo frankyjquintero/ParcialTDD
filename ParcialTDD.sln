@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParcialTDD.Core.Domain", "ParcialTDD.Core.Domain\ParcialTDD.Core.Domain.csproj", "{22D399C3-F6A1-4756-A5FF-E8BA3B790AA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22D399C3-F6A1-4756-A5FF-E8BA3B790AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22D399C3-F6A1-4756-A5FF-E8BA3B790AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22D399C3-F6A1-4756-A5FF-E8BA3B790AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22D399C3-F6A1-4756-A5FF-E8BA3B790AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D218CBE3-9E42-4C80-9E70-A807DAFC2A32}
+	EndGlobalSection
+EndGlobal
