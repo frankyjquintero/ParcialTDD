@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ParcialTDD.Core.Domain
 {
-    public class Class1
+    interface ISanciones
     {
+        decimal Liquidar(decimal ValorDeclarar, DateTime fechaDeclaracion, bool emplazamiento = false);
     }
 }
