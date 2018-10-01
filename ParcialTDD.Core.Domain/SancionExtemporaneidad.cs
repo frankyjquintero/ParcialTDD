@@ -18,15 +18,15 @@ namespace ParcialTDD.Core.Domain
         
         public decimal Liquidar(decimal ValorDeclarar, DateTime fechaDeclaracion, bool emplazamiento = false)
         {
-            var diasExtermporneos = CalcularDiasExtemporaneos(fechaDeclaracion);
+            var diasExtemporaneos = CalcularDiasExtemporaneos(fechaDeclaracion);
             if (ValorDeclarar > 0)
             {
-                var liquidacionParcial = ValorDeclarar * diasExtermporneos;
+                var liquidacionParcial = ValorDeclarar * diasExtemporaneos;
                 return emplazamiento ? (liquidacionParcial * 0.10m) : (liquidacionParcial * 0.05m);
             }
             else
             {
-                var liquidacionParcialCero = diasExtermporneos * SMLDV;
+                var liquidacionParcialCero = diasExtemporaneos * SMLDV;
                 return emplazamiento ? (liquidacionParcialCero * 2) : liquidacionParcialCero;
             }
         }
